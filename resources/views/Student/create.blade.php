@@ -2,7 +2,7 @@
 @section('content')
 
 <div class="row my-3">
-    <div class="col-md-8 mx-auto text-left">
+    <div class="col-md-10 mx-auto text-left">
         <a href="{{ route('student.index')}}" class="btn btn-warning">
             Return Back
         </a>
@@ -10,7 +10,7 @@
 </div>
 
 <div class="row my-2">
-    <div class="col-md-8 mx-auto">
+    <div class="col-md-10 mx-auto">
         <div class="card">
             <div class="card-header">Add New Student</div>
             <div class="card-body">

@@ -1,28 +1,69 @@
 <div class="form-group row">
     <label for="student_number" class="col-md-3 col-form-label text-md-right">Student Number</label>
     <div class="col-md-6">
-        <input value="{{ old('student_number', $student->student_number ?? null) }}" id="student_number"  class="form-control" name="student_number" placeholder="Student Number">
+        <input 
+            id="student_number"  
+            class="form-control @error('student_number') is-invalid @enderror"
+            value="{{ old('student_number', $student->student_number ?? null) }}"
+            name="student_number" 
+            placeholder="Student Number">
+    </div>
+    <div class="col-md-3">
+        @if ($errors->has('student_number'))
+            <span class="text-danger">{{ $errors->first('student_number') }}</span>
+        @endif
     </div>
 </div>
 
 <div class="form-group row">
     <label for="firstname" class="col-md-3 col-form-label text-md-right">First Name</label>
     <div class="col-md-6">
-        <input value="{{ old('firstname', $student->firstname ?? null) }}" id="firstname"  class="form-control" name="firstName" placeholder="First Name">
+        <input 
+        value="{{ old('firstname', $student->firstname ?? null) }}" 
+        id="firstname"  
+        class="form-control @error('firstname') is-invalid @enderror"
+        name="firstName" 
+        placeholder="First Name">
+    </div>
+    <div class="col-md-3">
+        @if ($errors->has('firstName'))
+            <span class="text-danger">{{ $errors->first('firstName') }}</span>
+        @endif
     </div>
 </div>
 
 <div class="form-group row">
     <label for="lastname" class="col-md-3 col-form-label text-md-right">Last Name</label>
     <div class="col-md-6">
-        <input value="{{ old('lastname', $student->lastname ?? null) }}" id="lastname"  class="form-control" name="lastname" placeholder="Last Name">
+        <input 
+        class="form-control @error('lastname') is-invalid @enderror"
+        value="{{ old('lastname', $student->lastname ?? null) }}" 
+        id="lastname"  class="form-control" 
+        name="lastname" 
+        placeholder="Last Name">
+    </div>
+    <div class="col-md-3">
+        @if ($errors->has('lastname'))
+            <span class="text-danger">{{ $errors->first('lastname') }}</span>
+        @endif
     </div>
 </div>
 
 <div class="form-group row">
     <label for="age" class="col-md-3 col-form-label text-md-right">Age</label>
     <div class="col-md-6">
-        <input value="{{ old('age', $student->age ?? null) }}" type="number" id="age"  class="form-control" name="age" placeholder="Age">
+        <input 
+            value="{{ old('age', $student->age ?? null) }}" 
+            type="number" 
+            id="age"  
+            class="form-control @error('age') is-invalid @enderror"
+            name="age" 
+            placeholder="Age">
+    </div>
+    <div class="col-md-3">
+        @if ($errors->has('age'))
+            <span class="text-danger">{{ $errors->first('age') }}</span>
+        @endif
     </div>
 </div>
 
@@ -30,14 +71,35 @@
 <div class="form-group row">
     <label for="class_id" class="col-md-3 col-form-label text-md-right">Class Id</label>
     <div class="col-md-6">
-        <input value="{{ old('class_id', $student->class_id ?? null) }}" type="number" id="class_id"  class="form-control" name="class_id" placeholder="Student class Id">
+        <input 
+            value="{{ old('class_id', $student->class_id ?? null) }}" 
+            type="number" 
+            id="class_id"  
+            class="form-control @error('class_id') is-invalid @enderror"
+            name="class_id" 
+            placeholder="Student class Id">
+    </div>
+    <div class="col-md-3">
+        @if ($errors->has('class_id'))
+            <span class="text-danger">{{ $errors->first('class_id') }}</span>
+        @endif
     </div>
 </div>
 
 <div class="form-group row">
     <label for="parents" class="col-md-3 col-form-label text-md-right">Parents</label>
     <div class="col-md-6">
-        <input  value="{{ old('parents', $student->parents ?? null) }}" id="parents"  class="form-control" name="parents" placeholder="FullName Parents">
+        <input  
+            value="{{ old('parents', $student->parents ?? null) }}" 
+            id="parents"  
+            class="form-control @error('parents') is-invalid @enderror"
+            name="parents" 
+            placeholder="FullName Parents">
+    </div>
+    <div class="col-md-3">
+        @if ($errors->has('parents'))
+            <span class="text-danger">{{ $errors->first('parents') }}</span>
+        @endif
     </div>
 </div>
 

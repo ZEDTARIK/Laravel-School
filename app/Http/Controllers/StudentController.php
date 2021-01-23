@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Requests\StoreStudent;
 use App\Student;
 
 class StudentController extends Controller
@@ -34,7 +35,7 @@ class StudentController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreStudent $request)
     {
         $student = new Student();
         $student->student_number = $request->input('student_number');
@@ -89,7 +90,7 @@ class StudentController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(StoreStudent $request, $id)
     {
         $student = Student::find($id);
         $student->student_number = $request->input('student_number');
