@@ -11,7 +11,7 @@
 
     <div class="row my-2">
         <div class="col-md-12">
-            <table class="table table-hover table-striped table-bordered">
+            <table class="table table-hover table-striped table-bordered table-sm-responsive">
                 <thead>
                     <tr style="color:blue;">
                         <th># Student Number</th>
@@ -19,8 +19,7 @@
                         <th>School Year</th>
                         <th>Class Id</th>
                         <th>Validation Date</th>
-                        <th>Update</th>
-                        <th>Delete</th>
+                        <th>Actions</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -32,18 +31,12 @@
                             <td>{{ $student->class_id }}</td>
                             <td>{{ $student->validate_date }}</td>
                             <td scope="row">
-                                <a href="{{'/student/'.$student->id.'/edit'}} " class="btn btn-sm btn-warning">
+                                <a title="Detail Student"  href="{{ route('student.show', ['student' => $student->id])}}" class="btn btn-sm btn-primary">
+                                    <i class="fa fa-address-card"></i>
+                                </a>
+                                <a title="Update Student" href="{{'/student/'.$student->id.'/edit'}} " class="btn btn-sm btn-warning">
                                     <i class="fa fa-edit"></i>
                                 </a>
-                            </td>
-                            <td>
-                                <form method="POST" action="{{ route('student.destroy', ['student' => $student->id]) }}">
-                                    @csrf
-                                    @method('DELETE')
-                                    <button type="submit" class="btn btn-sm btn-danger">
-                                        <i class="fa fa-trash-o"></i>
-                                    </button>
-                                </form>
                             </td>
                         </tr>
                     @endforeach
