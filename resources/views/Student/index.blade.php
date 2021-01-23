@@ -19,7 +19,8 @@
                         <th>School Year</th>
                         <th>Class Id</th>
                         <th>Validation Date</th>
-                        <th>Actions</th>
+                        <th>Update</th>
+                        <th>Delete</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -30,10 +31,19 @@
                             <td>{{ $student->school_years_id }}</td>
                             <td>{{ $student->class_id }}</td>
                             <td>{{ $student->validate_date }}</td>
-                            <td>
+                            <td scope="row">
                                 <a href="{{'/student/'.$student->id.'/edit'}} " class="btn btn-sm btn-warning">
                                     <i class="fa fa-edit"></i>
                                 </a>
+                            </td>
+                            <td>
+                                <form method="POST" action="{{ route('student.destroy', ['student' => $student->id]) }}">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" class="btn btn-sm btn-danger">
+                                        <i class="fa fa-trash-o"></i>
+                                    </button>
+                                </form>
                             </td>
                         </tr>
                     @endforeach

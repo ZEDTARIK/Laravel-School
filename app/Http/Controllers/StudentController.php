@@ -118,8 +118,11 @@ class StudentController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Request $request,$id)
     {
-        //
+        $student = Student::findOrFail($id);
+        $student->destroy($id);
+        $request->session()->flash('status', 'Student Was Deleted SuccessFully !');
+        return redirect()->route('student.index');
     }
 }
