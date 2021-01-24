@@ -25,6 +25,7 @@ class StoreStudent extends FormRequest
     {
         return [
             'student_number' => 'bail|required|min:1|max:10',
+            'school_years_id' => 'bail|required|min:4|max:4',
             'firstname' => 'bail|required|min:3|max:50',
             'lastname' => 'bail|required|min:3|max:50',
             'age' => 'bail|required|min:1|max:2',

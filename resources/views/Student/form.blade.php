@@ -16,6 +16,24 @@
 </div>
 
 <div class="form-group row">
+    <label for="school_years_id" class="col-md-3 col-form-label text-md-right">School Year</label>
+    <div class="col-md-6">
+        <input 
+            value="{{ old('school_years_id', $student->school_years_id ?? null) }}" 
+            type="number"  
+            id="school_years_id"  
+            class="form-control @error('school_years_id') is-invalid @enderror"
+            name="school_years_id"
+             placeholder="School Year 2021">
+    </div>
+    <div class="col-md-3">
+        @if ($errors->has('school_years_id'))
+            <span class="text-danger">{{ $errors->first('school_years_id') }}</span>
+        @endif
+    </div>
+</div>
+
+<div class="form-group row">
     <label for="firstname" class="col-md-3 col-form-label text-md-right">First Name</label>
     <div class="col-md-6">
         <input 
@@ -111,13 +129,6 @@
 </div>
 
 <div class="form-group row">
-    <label for="student_typeid" class="col-md-3 col-form-label text-md-right">Student Type</label>
-    <div class="col-md-6">
-        <input  value="{{ old('student_typeid', $student->student_typeid ?? null) }}" id="student_typeid"  class="form-control" name="student_typeid" placeholder="Student Type Id">
-    </div>
-</div>
-
-<div class="form-group row">
     <label for="registration_fee" class="col-md-3 col-form-label text-md-right">Registration Fee</label>
     <div class="col-md-6">
         <input  value="{{ old('registration_fee', $student->registration_fee ?? null) }}" id="registration_fee"  class="form-control" name="registration_fee" placeholder="Registration Fee">
@@ -125,15 +136,9 @@
 </div>
 
 <div class="form-group row">
-    <label for="img" class="col-md-3 col-form-label text-md-right">Student Image</label>
+    <label for="student_typeid" class="col-md-3 col-form-label text-md-right">Student Type</label>
     <div class="col-md-6">
-        <input 
-            type="file" 
-            value="{{ old('img', $student->img ?? null) }}" 
-            id="img"  
-            class="form-control-file" 
-            name="img" 
-            placeholder="Student Image">
+        <input  value="{{ old('student_typeid', $student->student_typeid ?? null) }}" id="student_typeid"  class="form-control" name="student_typeid" placeholder="Student Type Id">
     </div>
 </div>
 
@@ -141,13 +146,6 @@
     <label for="status_id" class="col-md-3 col-form-label text-md-right">Status</label>
     <div class="col-md-6">
         <input value="{{ old('status_id', $student->status_id ?? null) }}" type="number"  id="status_id"  class="form-control" name="status_id" placeholder="Status Id">
-    </div>
-</div>
-
-<div class="form-group row">
-    <label for="school_years_id" class="col-md-3 col-form-label text-md-right">School Year</label>
-    <div class="col-md-6">
-        <input value="{{ old('school_years_id', $student->school_years_id ?? null) }}" type="number"  id="school_years_id"  class="form-control" name="school_years_id" placeholder="School Year">
     </div>
 </div>
 
@@ -162,5 +160,18 @@
     <label for="registration_date" class="col-md-3 col-form-label text-md-right">Registration Date</label>
     <div class="col-md-6">
         <input value="{{ old('registration_date', $student->registration_date ?? null) }}" type="date"  id="registration_date"  class="form-control" name="registration_date" placeholder="Registration Date">
+    </div>
+</div>
+
+<div class="form-group row">
+    <label for="img" class="col-md-3 col-form-label text-md-right">Student Image</label>
+    <div class="col-md-6">
+        <input 
+            type="file" 
+            value="{{ old('img', $student->img ?? null) }}" 
+            id="img"  
+            class="form-control-file" 
+            name="img" 
+            placeholder="Student Image">
     </div>
 </div>

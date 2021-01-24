@@ -17,7 +17,7 @@
                         <th># Student Number</th>
                         <th>Full Name</th>
                         <th>School Year</th>
-                        <th>Class Id</th>
+                        <th>Class</th>
                         <th>Validation Date</th>
                         <th>Actions</th>
                     </tr>

@@ -21,11 +21,11 @@ class CreateStudentsTable extends Migration
             $table->string('lastname', 100);
             $table->tinyInteger('age');
             $table->integer('class_id');
-            $table->string('parents', 100);
-            $table->string('tel', 20);
+            $table->string('parents', 100)->nullable();
+            $table->string('tel', 20)->nullable();
             $table->tinyInteger('student_typeid', 0)->default(0);
-            $table->unsignedDecimal('registration_fee', 8, 2);
-            $table->string('img', 255);
+            $table->unsignedDecimal('registration_fee', 8, 2)->nullable();
+            $table->string('img', 255)->nullable();
             $table->tinyInteger('status_id')->default(0);
             $table->year('school_years_id');
             $table->date('validate_date')->nullable();

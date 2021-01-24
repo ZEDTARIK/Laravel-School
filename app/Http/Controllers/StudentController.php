@@ -47,9 +47,9 @@ class StudentController extends Controller
         $student->class_id = $request->input('class_id');
         $student->parents = $request->input('parents');
         $student->tel = $request->input('tel');
-        $student->student_typeid = $request->input('student_typeid');
         $student->registration_fee = $request->input('registration_fee');
-        $student->status_id = $request->input('status_id');
+       // $student->status_id = $request->input('status_id');
+       // $student->student_typeid = $request->input('student_typeid');
         $student->school_years_id = $request->input('school_years_id');
         $student->validate_date = $request->input('validate_date');
         $student->registration_date = $request->input('registration_date');

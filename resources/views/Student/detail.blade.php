@@ -21,6 +21,11 @@
                     </h4>
 
                     <ul class="list-group list-group-flush">
+                        <li class="list-group-item d-flex justify-content-between align-items-center">Student Images: 
+                            <img src="{{ asset('storage/'.$student->img ?? null)}}" class="image-fluid" 
+                                style="width: 90px;"
+                                alt="{{$student->lastname}}">
+                        </li>
                         <li class="list-group-item d-flex justify-content-between align-items-center">Student Number : 
                             <span class="badge badge-default"> {{ $student->student_number}}</span>
                         <li class="list-group-item d-flex justify-content-between align-items-center">Age: 
