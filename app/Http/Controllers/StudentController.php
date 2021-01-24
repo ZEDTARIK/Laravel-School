@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Http\UploadedFile;
 use App\Http\Requests\StoreStudent;
 use App\Student;
 
@@ -38,8 +39,9 @@ class StudentController extends Controller
     public function store(StoreStudent $request)
     {
         $student = new Student();
+
         $student->student_number = $request->input('student_number');
-        $student->firstName = $request->input('firstName');
+        $student->firstname = $request->input('firstname');
         $student->lastname = $request->input('lastname');
         $student->age = $request->input('age');
         $student->class_id = $request->input('class_id');
@@ -47,15 +49,21 @@ class StudentController extends Controller
         $student->tel = $request->input('tel');
         $student->student_typeid = $request->input('student_typeid');
         $student->registration_fee = $request->input('registration_fee');
-        $student->img = $request->input('studentImg');
         $student->status_id = $request->input('status_id');
         $student->school_years_id = $request->input('school_years_id');
         $student->validate_date = $request->input('validate_date');
         $student->registration_date = $request->input('registration_date');
 
+        // Uplaod Image Student using local storage
+        $hasFile = $request->hasFile('img');
+        if($hasFile) {
+           $student->img  = $request->img->store('ImgForStudents');
+        }
         // Save to DataBase
         $student->save();
+        // Flash message
         $request->session()->flash('status', 'Student SuccessFully Inserted');
+        // Redistect to Page index
         return redirect()->route('student.index');
     }
 

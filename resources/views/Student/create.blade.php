@@ -15,7 +15,8 @@
             <div class="card-header">Add New Student</div>
             <div class="card-body">
                 
-                <form method="POST" action="{{ route('student.store') }}">
+                <form method="POST" action="{{ route('student.store') }}" 
+                enctype="multipart/form-data">
                     @csrf
                     @include('student.form')
                     

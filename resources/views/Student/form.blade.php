@@ -22,7 +22,7 @@
         value="{{ old('firstname', $student->firstname ?? null) }}" 
         id="firstname"  
         class="form-control @error('firstname') is-invalid @enderror"
-        name="firstName" 
+        name="firstname" 
         placeholder="First Name">
     </div>
     <div class="col-md-3">
@@ -125,9 +125,15 @@
 </div>
 
 <div class="form-group row">
-    <label for="studentImg" class="col-md-3 col-form-label text-md-right">Student Image</label>
+    <label for="img" class="col-md-3 col-form-label text-md-right">Student Image</label>
     <div class="col-md-6">
-        <input  value="{{ old('studentImg', $student->img ?? null) }}" id="studentImg"  class="form-control" name="studentImg" placeholder="Student Image">
+        <input 
+            type="file" 
+            value="{{ old('img', $student->img ?? null) }}" 
+            id="img"  
+            class="form-control-file" 
+            name="img" 
+            placeholder="Student Image">
     </div>
 </div>
 
